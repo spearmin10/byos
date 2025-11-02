@@ -173,6 +173,7 @@ class Main {
 
             SetAutoLogon $this.domain_userid $this.domain_password $this.domain_dns_name
             $this._RegisterAutoSetupTask()
+            Restart-Computer -Force
         }
     }
 
