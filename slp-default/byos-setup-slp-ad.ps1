@@ -290,14 +290,14 @@ class Main {
             Write-Host "This script must be run as an administrator."
             SleepForever
         }
-        Unregister-ScheduledTask -TaskName [Main]::TASK_NAME -Confirm:$false -ErrorAction Ignore
+        Unregister-ScheduledTask -TaskName ([Main]::TASK_NAME) -Confirm:$false -ErrorAction Ignore
         
         $this._ConfigureHostName()
         $this._ConfigureIpAddress()
         $this._PromoteToDC()
         $this._AddOUAndUsers()
 
-        Unregister-ScheduledTask -TaskName [Main]::TASK_NAME -Confirm:$false -ErrorAction Ignore
+        Unregister-ScheduledTask -TaskName ([Main]::TASK_NAME) -Confirm:$false -ErrorAction Ignore
         ResetAutoLogon
     }
 }
